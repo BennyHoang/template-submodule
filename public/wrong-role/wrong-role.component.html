@@ -1,0 +1,13 @@
+<div class="flex h-screen bg-sky-100" *ngIf="(tokenData | json) !== '{}'">
+  <div class="m-auto bg-slate-50 p-20 rounded drop-shadow">
+    <h2 class="text-3xl">You are not allowed to view this page</h2>
+    <br />
+    <p>Name: {{ tokenData.decodedAccessToken.name }}</p>
+    <p>Email: {{ tokenData.decodedAccessToken.upn }}</p>
+    <br />
+  </div>
+</div>
+
+<div class="container mx-auto" *ngIf="(tokenData | json) === '{}'">
+  <p>Reading token data...</p>
+</div>

@@ -1,0 +1,25 @@
+<div
+  class="p-5 rounded-sm mb-5"
+  [ngClass]="{
+    'text-red-800 bg-red-100': alert.status === 'ERROR',
+    'text-yellow-800 bg-yellow-100': alert.status === 'WARNING',
+    'text-blue-800 bg-blue-100': alert.status === 'INFO'
+  }"
+>
+  <div class="flex space-x-3">
+    <div class="w-10 pt-1">
+      <mat-icon *ngIf="alert.status === 'ERROR' || 'INFO'">error</mat-icon>
+      <mat-icon *ngIf="alert.status === 'WARNING'">warning</mat-icon>
+    </div>
+    <div class="break-all">
+      <h2 class="text-2xl">
+        <strong>
+          {{ alert.headerText }}
+        </strong>
+      </h2>
+      <p>
+        {{ alert.text }}
+      </p>
+    </div>
+  </div>
+</div>

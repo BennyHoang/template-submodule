@@ -1,0 +1,13 @@
+
+.active {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+li {
+   @apply p-6;
+   &:hover {
+    background: rgba(0, 0, 0, 0.04);
+    cursor:pointer;
+   }
+
+}

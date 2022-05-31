@@ -1,0 +1,40 @@
+<app-toaster></app-toaster>
+<mat-drawer-container class="h-full">
+  <app-header [drawer]="drawer"></app-header>
+
+  <mat-drawer #drawer mode="side" opened="true" class="w-60">
+    <img
+      class="h-20 pl-5 pr-5"
+      src="../assets/images/nbim-logo.svg"
+      alt="nbim logo"
+    />
+    <nav>
+      <ul>
+        <li routerLink="services" routerLinkActive="active">
+          <mat-icon
+            class="align-middle material-icons material-icons-outlined mr-2"
+            >home</mat-icon
+          ><span> Services </span>
+        </li>
+        <li routerLink="logs" routerLinkActive="active">
+          <mat-icon
+            class="align-middle mr-2 material-icons material-icons-outlined"
+            >query_stats</mat-icon
+          ><span> Logs </span>
+        </li>
+        <li routerLinkActive="active" routerLink="notifications">
+          <mat-icon
+            class="align-middle mr-2 material-icons material-icons-outlined"
+            >notifications</mat-icon
+          ><span> Notifications </span>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="absolute bottom-0 left-10">Build time: {{ buildNumber }}</div>
+  </mat-drawer>
+
+  <div class="px-10">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
